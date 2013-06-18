@@ -1,10 +1,4 @@
-//
-//  AppDelegate.h
-//  
-//
-//  Created by Alex on 3/22/12.
-//  Copyright (c) 2012 theindex. All rights reserved.
-//
+
 
 #import "DataSingleton.h"
 

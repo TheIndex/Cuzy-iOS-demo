@@ -1,10 +1,3 @@
-//
-//  SingleItemView.m
-//  RevealControllerProject
-//
-//  Created by Alex on 13-5-28.
-//
-//
 
 #import "SingleItemView.h"
 #import "TaoBaoDetailViewController.h"

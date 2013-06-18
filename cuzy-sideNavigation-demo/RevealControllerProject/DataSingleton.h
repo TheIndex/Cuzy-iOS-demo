@@ -1,10 +1,3 @@
-//
-//  AppDelegate.h
-//
-//
-//  Created by Alex on 3/22/12.
-//  Copyright (c) 2012 theindex. All rights reserved.
-//#import <Foundation/Foundation.h>
 
 
 #define DEVICE_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)

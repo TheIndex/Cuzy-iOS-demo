@@ -1,10 +1,3 @@
-//
-//  CuzyAdSDK.h
-//  CuzyAdSDK
-//
-//  Created by xiaohuzhu on 13-3-26.
-//  Copyright (c) 2013年 xiaohuzhu. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 
