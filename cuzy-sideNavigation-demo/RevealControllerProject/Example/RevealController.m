@@ -50,6 +50,10 @@
 	
 	return self;
 }
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 #pragma - ZUUIRevealControllerDelegate Protocol.
 

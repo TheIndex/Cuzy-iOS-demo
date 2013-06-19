@@ -49,6 +49,10 @@
     [self.loadingImage setData:imageData];
 
 }
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -53,6 +53,10 @@
 {
 	return 2;
 }
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -10,6 +10,10 @@
 
 @implementation ViewController
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 - (void)viewDidLoad
 {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B9470713-8FF4-4819-A51F-B1DA953ACA1B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RevealControllerProject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5BD643CE-FE8D-4845-A551-F11B05A98153</key>
+		<string>https://github.com/TheIndex/Cuzy-iOS-demo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cuzy-sideNavigation-demo/RevealControllerProject.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5BD643CE-FE8D-4845-A551-F11B05A98153</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TheIndex/Cuzy-iOS-demo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5BD643CE-FE8D-4845-A551-F11B05A98153</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5BD643CE-FE8D-4845-A551-F11B05A98153</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cuzy-iOS-demo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

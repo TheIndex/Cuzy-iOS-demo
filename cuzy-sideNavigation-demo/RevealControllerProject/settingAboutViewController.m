@@ -22,6 +22,10 @@
     }
     return self;
 }
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 - (void)viewDidLoad
 {

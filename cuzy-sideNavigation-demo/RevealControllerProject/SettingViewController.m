@@ -31,6 +31,10 @@
     self.tableRef.backgroundView = nil;
     self.tableRef.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cuzy_layout_1_tile_bg.png"]];
 }
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -26,6 +26,10 @@
     // Drawing code
 }
 */
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 - (void)dealloc {
     [super dealloc];
