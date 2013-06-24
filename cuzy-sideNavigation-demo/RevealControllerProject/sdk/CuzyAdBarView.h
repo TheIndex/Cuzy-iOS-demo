@@ -1,3 +1,10 @@
+//
+//  CuzyAdBarView.h
+//  CuzyAdSDK
+//
+//  Created by xiaohuzhu on 13-3-27.
+//  Copyright (c) 2013年 xiaohuzhu. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
 
