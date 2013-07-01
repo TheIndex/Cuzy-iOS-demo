@@ -1,9 +1,12 @@
+late update 2013.7.1
+
+
 lipo -create libCuzyAdSDK.a libCuzyAdSDK_device.a -output libCuzyAdSDK_universal.a
-===============version 1.0===============
+===============version 1.1===============
 
 1.  this is a SDK for taobaoke
 
-2.  http://42.121.120.144:88/Public/api/api.txt
+2.  you can go to http://www.cuzy.com for more details
 
 3.  Something Notable:
     1).Copy the apropriate architecture's .a library and the apropriate resource bundle when you test.
@@ -19,6 +22,7 @@ lipo -create libCuzyAdSDK.a libCuzyAdSDK_device.a -output libCuzyAdSDK_universal
 }
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -28,13 +32,13 @@ lipo -create libCuzyAdSDK.a libCuzyAdSDK_device.a -output libCuzyAdSDK_universal
 
 
 - (IBAction)showLayout1:(id)sender {
-    [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:nil orSearchKeywords:@"abcd"];
+    [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:nil orSearchKeywords:@"男鞋"];
 }
 - (IBAction)showLayout2:(id)sender {
-    [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:@"8" orSearchKeywords:@"abcde"];
+    [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:@"8" orSearchKeywords:@"手机"];
 }
 - (IBAction)getRawDataArray:(id)sender {
-   NSArray* rawArray  = [[CuzyAdSDK sharedAdSDK] fetchRawItemArraysWithThemeID:@"8" orSearchKeywords:@"adbc" withPageIndex:0];
+   NSArray* rawArray  = [[CuzyAdSDK sharedAdSDK] fetchRawItemArraysWithThemeID:@"8" orSearchKeywords:@"夹克" withPageIndex:0];
     
     NSLog(@"the rawArray size is %d", rawArray.count);
     for (int i =0;i<[rawArray count]; i++) {
