@@ -42,12 +42,14 @@
     {
         [[CuzyAdSDK sharedAdSDK] setDelegate:self];
         
-        [[CuzyAdSDK sharedAdSDK] setTestingURL];
-        [[CuzyAdSDK sharedAdSDK] registerAppWithAppKey:@"200056" 	andAppSecret:@"051a9e4652fc5b881dfc6ba74d3cd633"];
+        
+        //this is for test server.
+        //[[CuzyAdSDK sharedAdSDK] setTestingURL];
+        //[[CuzyAdSDK sharedAdSDK] registerAppWithAppKey:@"200056" 	andAppSecret:@"051a9e4652fc5b881dfc6ba74d3cd633"];
         
         
         //release server key & secret:
-        //[[CuzyAdSDK sharedAdSDK] registerAppWithAppKey:@"200003" 	andAppSecret:@"208f53acd6d396867c2a721be6c807eb"];
+        [[CuzyAdSDK sharedAdSDK] registerAppWithAppKey:@"200003" 	andAppSecret:@"208f53acd6d396867c2a721be6c807eb"];
 
         
     }
