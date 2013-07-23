@@ -1,8 +1,12 @@
-late update 2013.7.1
+late update 2013.7.23
+1. fix the tmall jump bug.
+2. add change pic size function
+
+///////////////////////////////
 
 
 lipo -create libCuzyAdSDK.a libCuzyAdSDK_device.a -output libCuzyAdSDK_universal.a
-===============version 1.1===============
+===============version 3.0 ===============
 
 1.  this is a SDK for taobaoke
 
@@ -38,6 +42,9 @@ lipo -create libCuzyAdSDK.a libCuzyAdSDK_device.a -output libCuzyAdSDK_universal
     [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:@"8" orSearchKeywords:@"手机"];
 }
 - (IBAction)getRawDataArray:(id)sender {
+   //avail able picsize can be check at API head .....
+    [[CuzyAdSDK sharedAdSDK] setRawItemPicSize:@"250x250"];
+
    NSArray* rawArray  = [[CuzyAdSDK sharedAdSDK] fetchRawItemArraysWithThemeID:@"8" orSearchKeywords:@"夹克" withPageIndex:0];
     
     NSLog(@"the rawArray size is %d", rawArray.count);

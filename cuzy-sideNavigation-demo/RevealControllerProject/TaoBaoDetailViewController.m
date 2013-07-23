@@ -13,19 +13,20 @@
 @end
 
 @implementation TaoBaoDetailViewController
--(void)setUrlString:(NSString *)urlString
+@synthesize urlString;
+-(void)setUrlString:(NSString *)inputUrlString
 {
-    if (![_urlString isEqualToString:urlString]) {
-        _urlString = urlString;
-        NSURL* url = [NSURL URLWithString:[_urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    if (![self.urlString isEqualToString:inputUrlString]) {
+        urlString = inputUrlString;
+        
+        NSURL* url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         if (url) {
             NSURLRequest* request = [NSURLRequest requestWithURL:url];
             if (request) {
                 [self.webview loadRequest:request];
             }
         }
-    }
-}
+    }}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -92,6 +93,38 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self.loadingImage setHidden:YES];
+    
+    NSLog(@"webview fininsh loading %@", [webView.request.URL absoluteString]);
+    NSString* absoluteString = [webView.request.URL absoluteString];
+    if ([absoluteString rangeOfString:@"http://detail.tmall.com/"].length>0) {
+        /////this is a web version url of tmall, need to converse to mobile version url
+        //http://a.m.tmall.com/i14568464658.htm
+        
+        NSArray* substrings = [absoluteString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"?&"]];
+        
+        
+        
+        @try {
+            NSString* idstring = [substrings objectAtIndex:1];
+            NSString* subIdString = [idstring substringFromIndex:3];
+            NSString* wapString = [@"" stringByAppendingFormat:@"http://a.m.tmall.com/i%@.htm",subIdString];
+            urlString = wapString;
+            NSURL* url = [NSURL URLWithString:[self.urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            if (url)
+            {
+                NSURLRequest* request = [NSURLRequest requestWithURL:url];
+                if (request)
+                {
+                    [self.webview loadRequest:request];
+                }
+            }
+        }
+        @catch (NSException *exception) {
+            ///todo
+        }
+        
+    }
+
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
