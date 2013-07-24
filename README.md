@@ -7,9 +7,12 @@ iOS demo, that shows the capabilities of Cuzy SDK (淘宝客), that can be found
 
 =========================================
 
-last update: 2013.6.5
+last update: 2013.7.23
+fix tmall jump bug.
+add picsize function
 
-===============version 1.0===============
+
+===============version 3.0===============
 
 1.  this is a IOS APP SDK for taobaoke (Also has a sdk for android)
 
