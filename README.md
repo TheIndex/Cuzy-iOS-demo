@@ -78,6 +78,7 @@ add picsize function
 //////////////////////////////////////////////////////// 
 
 /////////////////////////////////version 3.0///////////////////////
+
 为了解决天猫物品的跳转问题，在使用 webview展示商品detail的时候。，需要重新构造一下跳转连接，代码如下。
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -86,10 +87,10 @@ add picsize function
    
     NSLog(@"webview fininsh loading %@", [webView.request.URL absoluteString]);
     NSString* absoluteString = [webView.request.URL absoluteString];
-    if ([absoluteString rangeOfString:@"http://detail.tmall.com/"].length>0) {
-        /////this is a web version url of tmall, need to converse to mobile version url
-        //http://a.m.tmall.com/i14568464658.htm
+    if ([absoluteString rangeOfString:@"http://detail.tmall.com/"].length>0) 
+   {
        
+
         NSArray* substrings = [absoluteString componentsSeparatedByCharactersInSet:
          [NSCharacterSet characterSetWithCharactersInString:@"?&"]];
        
