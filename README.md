@@ -3,7 +3,7 @@ Cuzy-iOS-demo
 ![alt tag](https://raw.github.com/TheIndex/Cuzy-iOS-demo/master/pic/0.png)
 =============
 
-iOS demo, that shows the capabilities of Cuzy SDK (淘宝客), that can be found on http://www.cuzy.com
+iOS demo, that shows the capabilities of Cuzy SDK (淘宝客)，taobaoke, that can be found on http://www.cuzy.com
 
 =========================================
 
