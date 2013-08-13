@@ -5,14 +5,17 @@ Cuzy-iOS-demo
 
 iOS demo, that shows the capabilities of Cuzy SDK (淘宝客)，taobaoke, that can be found on http://www.cuzy.com
 
-=========================================
+===============version 3.1==========================
 
+last update 2013.8.13
+1. add result filter function
+2. add results sorting methods
+
+===============version 3.0===============
 last update: 2013.7.23
 fix tmall jump bug.
 add picsize function
-
-
-===============version 3.0===============
+==========================================
 
 1.  this is a IOS APP SDK for taobaoke (Also has a sdk for android)
 
@@ -48,8 +51,28 @@ add picsize function
     [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:nil orSearchKeywords:@"abcd"];
 }
 - (IBAction)showLayout2:(id)sender {
-    [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:@"8" orSearchKeywords:@"abcde"];
+    
+    //////可以使用这个函数改变排序方式， 支持的排序方式有多种，具体可以参考文档或者.h文件/////////////////////////
+    //[[CuzyAdSDK sharedAdSDK] setItemSortingMethod:@"commission_volume_desc"];
+    ////// 可以用以下函数设置 过滤功能/////////////////////////////////////////////////////////////////
+    
+    //1.商品降价 大于30元
+    [[CuzyAdSDK sharedAdSDK] setFilter_PromotionRange:@"100" withEnd:@""];
+    
+    //2. 卖家等级 大于10,五钻以上// [[CuzyAdSDK sharedAdSDK] setFilter_SellerCreditRange:@"10" withEnd:@""];
+    
+    //3.佣金比例大于20%//  [[CuzyAdSDK sharedAdSDK] setFilter_ComissionRate:@"2000" withEnd:@""];
+    
+    //4. 30天内促销量 大于500//[[CuzyAdSDK sharedAdSDK] setFilter_ComissionVolumeIn30days:@"500" withEnd:@""];
+    
+    //5. 淘宝类型//[[CuzyAdSDK sharedAdSDK] setFilter_itemType:@"1"];
+    
+    /////////////////////////////////////////////////////////////////////////
+    [[CuzyAdSDK sharedAdSDK] fetchAppItemWithThemeID:@"2" orSearchKeywords:@"鞋子" withPageIndex:0];
 }
+
+
+
 - (IBAction)getRawDataArray:(id)sender {
    NSArray* rawArray  = [[CuzyAdSDK sharedAdSDK] fetchRawItemArraysWithThemeID:@"8" orSearchKeywords:@"adbc" withPageIndex:0];
     
