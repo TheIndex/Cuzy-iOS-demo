@@ -113,10 +113,73 @@
 
 -(void)setRawItemPicSize:(NSString*)sizeString;
 
+
+
+
+
+
+
+
+
+
+
+//////////set items filter//////////////////
+
+
+/*
+ 注:
+ 筛选区间可与排序方式同时使用,其中筛选区间可以设置多个.排序方式只能选择一个,
+ 筛选区间:
+ 折扣价区间:  0 - ∞
+ start_promotion: 起始折扣价
+ end_promotion: 结束折扣价
+ 卖家信用区间: 1-20    1-5 心 6-10 钻  11-15 冠 16-20 皇冠
+ start_credit:起始信用
+ end_credit:结束信用
+ 佣金比例区间: 0-10000  换算为(0%-100%)
+ start_commission_rate:起始佣金比例   规则: 去掉百分号*100  如4% 去掉% 4 *100  传入的参数为400
+ end_commission_rate:结束佣金比例
+ 30天推广量:  0 - ∞
+ start_commission_volume:起始推广量
+ end_commission_volume:结束推广量
+ 推广类型: 枚举  1 集市 2 天猫
+ item_type  搜索类型 不填为全部
+ 
+ */
+-(void)setFilter_PromotionRange:(NSString*)startPromotionRage withEnd:(NSString*)endPromotionRage;
+-(void)setFilter_SellerCreditRange:(NSString*)startCreditRange withEnd: (NSString*)endCreditRange;
+-(void)setFilter_ComissionRate:(NSString*)startCommissionRate withEnd:(NSString*)endCommissionRate;
+-(void)setFilter_ComissionVolumeIn30days:(NSString*)startCommissionVolume withEnd:(NSString*)endCommissionVolume;
+-(void)setFilter_itemType:(NSString*)itemType;
+
+/////////end of set items filter////////////
+
+
+
+
+
+
+//////set Item Sorting Method///////////////
+/*
+ 排序方式:
+ "promotion_asc"      折扣价由低到高
+ "promotion_desc"     折扣价由高到低
+ "seller_credit_score_desc" 卖家信用由高到低
+ "commission_rate_desc"  佣金由高到低
+ "commission_num_desc"   佣金比例由高到低
+ "commission_volume_desc" 30天推广量由高到低
+ 例如 sort=promotion_asc
+ 注:
+ 筛选区间可与排序方式同时使用,其中筛选区间可以设置多个.排序方式只能选择一个,
+ */
+
+-(void)setItemSortingMethod:(NSString*)sortingMethodString;
+
+
+////////////////////////////////////////////
+
 -(void)start;
 -(void)stop;
-
-
 -(void)cancelAction;
 
 

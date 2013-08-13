@@ -265,13 +265,11 @@
 {
     dispatch_queue_t downloadQueue = dispatch_queue_create("fetch TBK Items queue", NULL);
     dispatch_async(downloadQueue, ^{
-        NSArray* ThemeIdArray =[[[NSArray alloc] initWithObjects:@"12",@"14",@"25",@"6", nil] autorelease ];
         
-        int random = rand()%4;
         
-        NSString* themeString = [ThemeIdArray objectAtIndex:random];
+       [[CuzyAdSDK sharedAdSDK] setFilter_ComissionVolumeIn30days:@"30" withEnd:@""];
         NSMutableArray* returnArray =
-       (NSMutableArray*)[[CuzyAdSDK sharedAdSDK] fetchRawItemArraysWithThemeID:themeString orSearchKeywords:searchKey withPageIndex:currentPageIndex];
+       (NSMutableArray*)[[CuzyAdSDK sharedAdSDK] fetchRawItemArraysWithThemeID:@"2" orSearchKeywords:searchKey withPageIndex:currentPageIndex];
         
         if (self.loadingmore)
         {
