@@ -5,16 +5,45 @@ Cuzy-iOS-demo
 
 iOS demo, that shows the capabilities of Cuzy SDK (淘宝客)，taobaoke, that can be found on http://www.cuzy.com
 
+
+/////version 3.2/////////////
+
+last update 2013.9.23
+
+1. fix the itemID null bug
+
+2. 
+
+//是否包邮，0 为不包邮，1为包邮
+
+@property(nonatomic, strong)NSString*   free_postage;
+
+// 商品类型，0未知 1 为淘宝， 2为天猫 
+
+@property(nonatomic, strong)NSString*   item_type;
+
+// 更多此商品的图片，为一个数组，
+
+@property(nonatomic, strong)NSArray*    picturesArray;
+
+
+
+
+
 ===============version 3.1==========================
 
 last update 2013.8.13
+
 1. add result filter function
+
 2. add results sorting methods
 
 ===============version 3.0===============
+
 last update: 2013.7.23
 fix tmall jump bug.
 add picsize function
+
 ==========================================
 
 1.  this is a IOS APP SDK for taobaoke (Also has a sdk for android)
@@ -100,47 +129,6 @@ add picsize function
 
 //////////////////////////////////////////////////////// 
 
-/////////////////////////////////version 3.0///////////////////////
-
-为了解决天猫物品的跳转问题，在使用 webview展示商品detail的时候。，需要重新构造一下跳转连接，代码如下。
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [self.loadingImage setHidden:YES];
-   
-    NSLog(@"webview fininsh loading %@", [webView.request.URL absoluteString]);
-    NSString* absoluteString = [webView.request.URL absoluteString];
-    if ([absoluteString rangeOfString:@"http://detail.tmall.com/"].length>0) 
-   {
-       
-
-        NSArray* substrings = [absoluteString componentsSeparatedByCharactersInSet:
-         [NSCharacterSet characterSetWithCharactersInString:@"?&"]];
-       
-       
-       
-        @try {
-            NSString* idstring = [substrings objectAtIndex:1];
-            NSString* subIdString = [idstring substringFromIndex:3];
-            NSString* wapString = [@"" stringByAppendingFormat:@"http://a.m.tmall.com/i%@.htm",subIdString];
-            urlString = wapString;
-            NSURL* url = [NSURL URLWithString:[self.urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-            if (url)
-            {
-                NSURLRequest* request = [NSURLRequest requestWithURL:url];
-                if (request)
-                {
-                    [self.webview loadRequest:request];
-                }
-            }
-        }
-        @catch (NSException *exception) {
-            ///todo
-        }
-       
-    }
-
-}
 
 
 ////////////////////////////////////////////////////////
