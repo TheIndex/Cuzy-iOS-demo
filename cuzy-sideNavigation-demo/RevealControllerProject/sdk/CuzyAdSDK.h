@@ -206,6 +206,13 @@
 @property(nonatomic,strong)NSString*    promotionPrice;
 //ours
 @property(nonatomic,strong)NSString*    itemDescription;
+//是否包邮，0 为不包邮，1为包邮
+@property(nonatomic, strong)NSString*   free_postage;
+// 商品类型，0 为淘宝， 1为天猫
+@property(nonatomic, strong)NSString*   item_type;
+// 更多此商品的图片，为一个数组，
+@property(nonatomic, strong)NSArray*    picturesArray;
+
 
 @end
 
