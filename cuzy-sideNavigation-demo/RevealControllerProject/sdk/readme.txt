@@ -1,11 +1,34 @@
 
 
 
-===============version 3.2 ===============
+===============version 3.3 ===============
 lipo -create libCuzyAdSDK.a libCuzyAdSDK_device.a -output libCuzyAdSDK_universal.a
 
 
-/////version 3.2/////////////
+/////version 3.3//////////////////////////////////////////////
+last update 2013.10.23
+1. 新增团购类API
+-(NSArray*)fetchGroupBuyingUsingKeyword:(NSString*)KeyWord
+                               withPageIndex:(NSInteger)pageIndex
+                                withCityName:(NSString*)cityString
+                                withDistName:(NSString*)DistString
+                                 withAreaKey:(NSString*)Areakey;
+
+-(NSArray*)fetchGroupBuyingUsingGPSlatlon:(NSString*)latString
+                            withlonString:(NSString*)lonString
+                            withCoordType:(NSInteger)type
+                               withRadius:(NSInteger)radius
+                            withPageIndex:(NSInteger)pageIndex;
+2. 新增淘宝店铺退关类API
+更多细节可以查看本文档后面的细节
+-(NSArray*)fetchTBshopItemsWithKeyword:(NSString*)keyString
+                             WithPageIndex:(NSInteger)pageIndex
+                             WithSortingMethodString:(NSString*)sortingString;
+
+
+
+
+/////version 3.2////////////////////////////////////////
 last update 2013.9.23
 1. fix the itemID null bug
 2. 
@@ -103,4 +126,87 @@ late update 2013.7.23
     }
     
 }
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+5. 获取团购数据
+/////////////////////////////////////////////////
+
+
+/* 通过关键字 或者类别信息获取团购信息
+ 
+ ----------------必选参数-------------------------------
+ "KeyWord" : 必选参数
+            KeyWord团购名称关键字
+ 
+ 
+ ----------------可选参数-------------------------------
+ 
+ "pageIndex"    //当前的页数不填默认为第一页 即 page:0 ，最大页码为20
+ 
+ "cityString"						//城市名，有街道则只依据街道
+ "DistString"					//区县名
+ "Areakey"						//地标或街道名
+ 
+ 
+ 
+ */
+
+-(NSArray*)fetchGroupBuyingUsingKeyword:(NSString*)KeyWord
+                               withPageIndex:(NSInteger)pageIndex
+                                withCityName:(NSString*)cityString
+                                withDistName:(NSString*)DistString
+                                 withAreaKey:(NSString*)Areakey;
+
+/*
+ 通过经纬度度信息获取 团购信息
+ 
+ 
+--------------------- 必选参数--------------------------
+ x	"latString"        		 //维度
+ x	"lonString"        		 //经度
+
+ -------------------- 可选参数 --------------------------
+ "type"			//默认为3 . 坐标的类型:
+                      1.gcj02ll（国测局墨卡托坐标,火星坐标系）、
+                      2.wgs84ll（GPS经纬度，地球坐标系）、
+                      3.bd09ll（百度墨卡托坐标）
+ "radius"          //半径 ，单位为米. 如果超过10000或小于1时，默认为100 , 建议值为10000
+ "pageIndex"          //当前的页数不填默认为第一页 即 page:0 ，最大页码为20
+ 
+ */
+-
+(NSArray*)fetchGroupBuyingUsingGPSlatlon:(NSString*)latString
+                            withlonString:(NSString*)lonString
+                            withCoordType:(NSInteger)type
+                               withRadius:(NSInteger)radius
+                            withPageIndex:(NSInteger)pageIndex;
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+6. 获取淘宝店铺推广API
+
+/* fetch taobao Shop，获取淘宝店铺API
+ 
+ 
+ -------------------必选参数------------------------------------
+"keyword"  //  keyword 店铺名称关键字
+ 
+ -------------------可选参数---------------------------------------
+ "page"          //当前的页数不填默认为第一页 即 page:0 ，最大页码为20
+
+ 
+ 排序方式:
+ "seller_credit_desc" 卖家信用 降序
+ "seller_credit_asc" 卖家信用 升序
+ "commission_rate_desc"  佣金 降序
+ "commission_rate_asc"  佣金 升序
+ "auction_count_desc"  商品总数 降序
+ "auction_count_asc"  商品总数 降序
+ "total_auction_desc" 累计推广量 降序
+ "total_auction_asc" 累计推广量 降序
+*/
+
+
+-(NSArray*)fetchTBshopItemsWithKeyword:(NSString*)keyString
+                             WithPageIndex:(NSInteger)pageIndex
+                             WithSortingMethodString:(NSString*)sortingString;
+
 
