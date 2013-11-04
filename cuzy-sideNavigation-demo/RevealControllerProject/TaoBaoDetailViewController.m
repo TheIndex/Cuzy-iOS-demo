@@ -19,13 +19,7 @@
     if (![self.urlString isEqualToString:inputUrlString]) {
         urlString = inputUrlString;
         
-        NSURL* url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        if (url) {
-            NSURLRequest* request = [NSURLRequest requestWithURL:url];
-            if (request) {
-                [self.webview loadRequest:request];
-            }
-        }
+       
     }}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,7 +42,13 @@
     NSData* imageData = [NSData dataWithContentsOfFile:filePath];
     self.loadingImage.backgroundColor = [UIColor clearColor];
     [self.loadingImage setData:imageData];
-
+    NSURL* url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    if (url) {
+        NSURLRequest* request = [NSURLRequest requestWithURL:url];
+        if (request) {
+            [self.webview loadRequest:request];
+        }
+    }
 }
 - (BOOL)shouldAutorotate
 {
