@@ -20,6 +20,9 @@
     IBOutlet UIView *test7View;
     
     IBOutlet UIView *test8View;
+    
+    
+    IBOutlet UIView *test9View;
     __weak IBOutlet CollapseClick *myCollapseClick;
 }
 

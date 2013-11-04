@@ -4,6 +4,7 @@
 #import "DataSingleton.h"
 #import "RearViewController.h"
 #import "RevealController.h"
+#import "groupBuyViewController.h"
 @interface ViewController ()
 
 @end
@@ -51,37 +52,41 @@
 
 // Required Methods
 -(int)numberOfCellsForCollapseClick {
-    return 8;
+    return 9;
 }
 
 -(NSString *)titleForCollapseClickAtIndex:(int)index {
     switch (index) {
         case 0:
-            return @"个性男装";
+            return @"团购信息";
             break;
         case 1:
-            return @"潮流女装";
+            return @"个性男装";
             break;
         case 2:
+            return @"潮流女装";
+            break;
+        case 3:
             return @"数码配件";
             break;
             
-        case 3:
+        case 4:
             return @"精品男鞋";
             break;
-        case 4:
+        case 5:
             return @"时尚女鞋";
             break;
-        case 5:
+        case 6:
             return @"箱包配饰";
             break;
             
-        case 6:
+        case 7:
             return @"运动健身";
             break;
-        case 7:
+        case 8:
             return @"美容护肤";
             break;
+        
         default:
             return @"default";
             break;
@@ -91,29 +96,33 @@
 -(UIView *)viewForCollapseClickContentViewAtIndex:(int)index {
     switch (index) {
         case 0:
-            return test1View;
+            return test9View;
             break;
         case 1:
-            return test2View;
+            return test1View;
             break;
         case 2:
+            return test2View;
+            break;
+        case 3:
             return test3View;
             break;
             
-        case 3:
-            return test4View;
         case 4:
+            return test4View;
+        case 5:
             return test5View;
             break;
-        case 5:
+        case 6:
             return test6View;
             break;
-        case 6:
+        case 7:
             return test7View;
             break;
-        case 7:
+        case 8:
             return test8View;
             break;
+        
         default:
             return test1View;
             break;
@@ -155,9 +164,12 @@
     [DataSingleton singleton].strInformation= @"button1 pressed";
 }
 - (void)dealloc {
+   // [test9View release];
    // [super dealloc];
 }
 - (void)viewDidUnload {
+    //[test9View release];
+    //test9View = nil;
     [super viewDidUnload];
 }
 
@@ -417,5 +429,15 @@
     [DataSingleton singleton].searchString = @"美容 仪器";
     [self goBackFrontView];
 }
+
+- (IBAction)action901:(id)sender {
+       
+    groupBuyViewController* groupView =  [[groupBuyViewController alloc] initWithNibName:@"groupBuyViewController" bundle:nil] ;
+    [self presentModalViewController:groupView animated:YES];
+    
+}
+
+
+
 
 @end
