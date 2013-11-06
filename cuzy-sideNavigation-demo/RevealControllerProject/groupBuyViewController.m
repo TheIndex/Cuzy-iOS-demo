@@ -29,11 +29,22 @@
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;//隐藏为YES，显示为NO
+}
 
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
+
+    
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        // iOS 7
+        [self prefersStatusBarHidden];
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    }
     self.dataArray = [[[NSMutableArray alloc] init] autorelease];
     
     NSArray* rawArray  = [[CuzyAdSDK sharedAdSDK] fetchGroupBuyingUsingKeyword:@"美食" withPageIndex:0 withCityName: @"上海" withDistName:@"" withAreaKey:@""];

@@ -75,14 +75,12 @@
 		FA0369DE174F63EF006002C7 /* DataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0369DD174F63EF006002C7 /* DataSingleton.m */; };
 		FA2CA8B21822563A00E37CC0 /* groupBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8B01822563A00E37CC0 /* groupBuyViewController.m */; };
 		FA2CA8B31822563A00E37CC0 /* groupBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CA8B11822563A00E37CC0 /* groupBuyViewController.xib */; };
-		FA38958418277B2300507CDE /* groupBuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38958318277B2300507CDE /* groupBuyCell.m */; };
 		FA3895881827810400507CDE /* SearchTypeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3895861827810400507CDE /* SearchTypeOneCell.m */; };
 		FA3895891827810400507CDE /* SearchTypeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3895871827810400507CDE /* SearchTypeOneCell.xib */; };
 		FA38959118278B8F00507CDE /* StrikeThroughLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38959018278B8F00507CDE /* StrikeThroughLabel.m */; };
 		FA38CD4C1820BB7C000C2943 /* groupbuy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA38CD4B1820BB7C000C2943 /* groupbuy.jpg */; };
 		FA3D18A818237A8000B09AB6 /* cuzy_layout_1_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3D18A618237A8000B09AB6 /* cuzy_layout_1_back@2x.png */; };
 		FA3D18A918237A8000B09AB6 /* cuzy_layout_1_back.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3D18A718237A8000B09AB6 /* cuzy_layout_1_back.png */; };
-		FA3D18B3182385CA00B09AB6 /* groupBuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3D18B2182385CA00B09AB6 /* groupBuyCell.xib */; };
 		FA3D18B81823984D00B09AB6 /* groupBuyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3D18B61823984D00B09AB6 /* groupBuyWebViewController.m */; };
 		FA3D18B91823984D00B09AB6 /* groupBuyWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3D18B71823984D00B09AB6 /* groupBuyWebViewController.xib */; };
 		FA41EC2117559FBE0008299E /* imageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA41EC2017559FBE0008299E /* imageCacheManager.m */; };
@@ -219,8 +217,6 @@
 		FA2CA8AF1822563A00E37CC0 /* groupBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupBuyViewController.h; sourceTree = "<group>"; };
 		FA2CA8B01822563A00E37CC0 /* groupBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupBuyViewController.m; sourceTree = "<group>"; };
 		FA2CA8B11822563A00E37CC0 /* groupBuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupBuyViewController.xib; sourceTree = "<group>"; };
-		FA38958218277B2300507CDE /* groupBuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupBuyCell.h; sourceTree = "<group>"; };
-		FA38958318277B2300507CDE /* groupBuyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupBuyCell.m; sourceTree = "<group>"; };
 		FA3895851827810400507CDE /* SearchTypeOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTypeOneCell.h; sourceTree = "<group>"; };
 		FA3895861827810400507CDE /* SearchTypeOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTypeOneCell.m; sourceTree = "<group>"; };
 		FA3895871827810400507CDE /* SearchTypeOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTypeOneCell.xib; sourceTree = "<group>"; };
@@ -229,7 +225,6 @@
 		FA38CD4B1820BB7C000C2943 /* groupbuy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = groupbuy.jpg; sourceTree = "<group>"; };
 		FA3D18A618237A8000B09AB6 /* cuzy_layout_1_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cuzy_layout_1_back@2x.png"; sourceTree = "<group>"; };
 		FA3D18A718237A8000B09AB6 /* cuzy_layout_1_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cuzy_layout_1_back.png; sourceTree = "<group>"; };
-		FA3D18B2182385CA00B09AB6 /* groupBuyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupBuyCell.xib; sourceTree = "<group>"; };
 		FA3D18B51823984D00B09AB6 /* groupBuyWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupBuyWebViewController.h; sourceTree = "<group>"; };
 		FA3D18B61823984D00B09AB6 /* groupBuyWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupBuyWebViewController.m; sourceTree = "<group>"; };
 		FA3D18B71823984D00B09AB6 /* groupBuyWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupBuyWebViewController.xib; sourceTree = "<group>"; };
@@ -508,9 +503,6 @@
 				FA2CA8AF1822563A00E37CC0 /* groupBuyViewController.h */,
 				FA2CA8B01822563A00E37CC0 /* groupBuyViewController.m */,
 				FA2CA8B11822563A00E37CC0 /* groupBuyViewController.xib */,
-				FA38958218277B2300507CDE /* groupBuyCell.h */,
-				FA38958318277B2300507CDE /* groupBuyCell.m */,
-				FA3D18B2182385CA00B09AB6 /* groupBuyCell.xib */,
 				FA3D18B51823984D00B09AB6 /* groupBuyWebViewController.h */,
 				FA3D18B61823984D00B09AB6 /* groupBuyWebViewController.m */,
 				FA3D18B71823984D00B09AB6 /* groupBuyWebViewController.xib */,
@@ -685,7 +677,6 @@
 				FA41EC6D175740400008299E /* shoppingSidebarDown@2x.png in Resources */,
 				FA2CA8B31822563A00E37CC0 /* groupBuyViewController.xib in Resources */,
 				FA41EC70175743B20008299E /* shoppingBackground.png in Resources */,
-				FA3D18B3182385CA00B09AB6 /* groupBuyCell.xib in Resources */,
 				FA41EC71175743B20008299E /* shoppingBackground@2x.png in Resources */,
 				FA38CD4C1820BB7C000C2943 /* groupbuy.jpg in Resources */,
 				FA41EC9B17574F560008299E /* back_button.png in Resources */,
@@ -773,7 +764,6 @@
 				1830AD511758DE6300B23C01 /* SettingViewController.m in Sources */,
 				1830AD631758F97F00B23C01 /* settingAboutViewController.m in Sources */,
 				FA7B4406175EDFB2002BD97A /* SCGIFImageView.m in Sources */,
-				FA38958418277B2300507CDE /* groupBuyCell.m in Sources */,
 				FA5C7EE017647906000C4384 /* SVSegmentedControl.m in Sources */,
 				FA5C7EE117647906000C4384 /* SVSegmentedThumb.m in Sources */,
 			);

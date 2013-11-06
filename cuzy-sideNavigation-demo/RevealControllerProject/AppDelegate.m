@@ -62,6 +62,7 @@ static void uncaughtExceptionHandler(NSException *exception) {
         [navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackground.png"] forBarMetrics: UIBarMetricsDefault];
     }
 
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
 	self.viewController = revealController;
 	
