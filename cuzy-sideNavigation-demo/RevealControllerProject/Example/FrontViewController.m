@@ -410,9 +410,9 @@ static int currentPageIndex = 0;
 -(void)showDetailTaobaoWebView:(NSString*)urlString;
 {
     TaoBaoDetailViewController* tbkVC = [[[TaoBaoDetailViewController alloc] initWithNibName:@"TaoBaoDetailViewController" bundle:nil] autorelease];
-    
-    [self.navigationController pushViewControllerWithCustomBackButton:tbkVC animated:YES];
     tbkVC.urlString = [@"http://" stringByAppendingFormat:@"%@", urlString];
+    [self.navigationController pushViewControllerWithCustomBackButton:tbkVC animated:YES];
+    
   
     
 }

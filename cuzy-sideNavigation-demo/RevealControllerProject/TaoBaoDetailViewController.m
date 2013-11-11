@@ -42,7 +42,9 @@
     NSData* imageData = [NSData dataWithContentsOfFile:filePath];
     self.loadingImage.backgroundColor = [UIColor clearColor];
     [self.loadingImage setData:imageData];
-    NSURL* url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    //NSURL* url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURL* url = [NSURL URLWithString:urlString];
+    
     if (url) {
         NSURLRequest* request = [NSURLRequest requestWithURL:url];
         if (request) {
