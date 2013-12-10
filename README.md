@@ -5,6 +5,37 @@ Cuzy-iOS-demo
 
 iOS demo, that shows the capabilities of Cuzy SDK (淘宝客)，taobaoke, that can be found on http://www.cuzy.com
 
+
+
+
+////////version 3.3.2////////////////////////////////////////////
+last update 2013.12.9
+
+1. 新增对 京东数据平台的支持，web服务可以暂时访问 www.cuzy2.com
+
+2. 数据切换，在发送数据请求之前，设置数据平台类型
+
+/* using to switch between different database_type
+
+ #define CUZY_TAOBAO_DATABASE 1
+ 
+ #define CUZY_JD_DATABASE 2
+ 
+ default will be CUZY_TAOBAO_DATABASE,
+ 
+ if the value is wrong , will be set to default
+ 
+ */
+ 
+-(void)setCuzyDataBase:(int) dataBase_type;
+
+-(int)getCuzyDataBase;
+
+
+
+
+
+
 /////////////////////version 3.3//////////////////////////////////////////////
  
 last update 2013.10.23
@@ -288,4 +319,4 @@ QQ：1263572458 QQ群：322622433
 
 
 
-keywords:taobaoke,淘宝客，掌淘，手机淘客，cuzy，cuzysdk，返利，手机返利,团购，大众点评，拉手团购
+keywords:taobaoke,淘宝客， 京东推广数据，京东客 京东平台，掌淘，手机淘客，cuzy，cuzysdk，返利，手机返利,团购，大众点评，拉手团购,
