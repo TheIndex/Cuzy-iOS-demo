@@ -76,6 +76,7 @@
 
 
 
+- (IBAction)switchJDdata:(id)sender;
 
 
 @end

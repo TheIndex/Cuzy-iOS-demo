@@ -126,11 +126,48 @@
         }
         
     }
+    
+    
+    if ([absoluteString rangeOfString:@"http://item.jd.com/"].length >0) {
+        [self HandleJD:absoluteString];
+    }
+    
 
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [self.loadingImage setHidden:YES];
+}
+
+-(void)HandleJD:(NSString*)absoluteString
+{
+    //http://m.jd.com/product/667648.html
+    //http://item.jd.com/667648.html
+    
+    
+    @try {
+        
+        NSRange result = [absoluteString rangeOfString:@"http://item.jd.com/"];
+        NSString* endString = [absoluteString substringFromIndex:result.location+result.length];
+        
+        urlString = [@"http://m.jd.com/product/" stringByAppendingString:endString];
+        urlString = [urlString stringByAppendingString:@"?v=t"];
+        NSURL* url = [NSURL URLWithString:[self.urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        if (url)
+        {
+            NSURLRequest* request = [NSURLRequest requestWithURL:url];
+            if (request)
+            {
+                [self.webview loadRequest:request];
+            }
+        }
+    }
+    @catch (NSException *exception) {
+    }
+    
+    
+    
+    
 }
 
 

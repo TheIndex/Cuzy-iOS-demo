@@ -14,7 +14,11 @@
 #import <Foundation/Foundation.h>
 
 
-#define CUZY_DEBUG 1
+#define CUZY_NSLOG_ON 1
+
+#define CUZY_TAOBAO_DATABASE 1
+#define CUZY_JD_DATABASE 2
+
 
 
 @class UIImage;
@@ -68,20 +72,35 @@
 
 
 
+
+
+/* using to switch between different database_type
+ #define CUZY_TAOBAO_DATABASE 1
+ #define CUZY_JD_DATABASE 2
+ 
+ default will be CUZY_TAOBAO_DATABASE,
+ if the value is wrong , will be set to default
+ */
+-(void)setCuzyDataBase:(int) dataBase_type;
+-(int)getCuzyDataBase;
+
+
+
+
 /*
  asynchronizaed API
  get tbk items,if you give themeid then you the keywords will be ignored.
  
-* themeID: 必须参数之一， 可为空字符串
-* keywords: 必选参数之一，themeid和keywords 必须有一个为非空字符串
-* pageIndex: 必须参数
-
-1. themeid is the id of theme you want to show, can be system hot theme, or your self app theme
+ * themeID: 必须参数之一， 可为空字符串
+ * keywords: 必选参数之一，themeid和keywords 必须有一个为非空字符串
+ * pageIndex: 必须参数
  
-2. keyword, the things you want to show, notice, 
+ 1. themeid is the id of theme you want to show, can be system hot theme, or your self app theme
+ 
+ 2. keyword, the things you want to show, notice,
  (keyword的优先级高于theme，如果keyword和theme同时不为空，那么返回keywords的搜索结果)
  
-3. pageIndex, [from 0], the pages
+ 3. pageIndex, [from 0], the pages
  
  */
 -(void)fetchAppItemWithThemeID:(NSString*)themeid
@@ -103,7 +122,7 @@
  (keyword的优先级高于theme，如果keyword和theme同时不为空，那么返回keywords的搜索结果)
  3. pageIndex, [from 0], the pages
  
-*/
+ */
 
 -(NSArray*)fetchRawItemArraysWithThemeID:(NSString*)themeid
                         orSearchKeywords:(NSString*)keywords
@@ -125,7 +144,7 @@
 
 /*
  
-    设置一次返回的物品个数，
+ 设置一次返回的物品个数，
  ［0 到 40］为有效值，默认为返回20个
  */
 -(void)setRawItemPageNumber:(NSString*)PageString;
@@ -141,11 +160,11 @@
  
  
  -------------------必选参数------------------------------------
-"keyword"  //  keyword 店铺名称关键字
+ "keyword"  //  keyword 店铺名称关键字
  
  -------------------可选参数---------------------------------------
  "page"          //当前的页数不填默认为第一页 即 page:0 ，最大页码为20
-
+ 
  
  排序方式:
  "seller_credit_desc" 卖家信用 降序
@@ -156,12 +175,12 @@
  "auction_count_asc"  商品总数 降序
  "total_auction_desc" 累计推广量 降序
  "total_auction_asc" 累计推广量 降序
-*/
+ */
 
 
 -(NSArray*)fetchTBshopItemsWithKeyword:(NSString*)keyString
-                             WithPageIndex:(NSInteger)pageIndex
-                             WithSortingMethodString:(NSString*)sortingString;
+                         WithPageIndex:(NSInteger)pageIndex
+               WithSortingMethodString:(NSString*)sortingString;
 /////////////////////////////////////////////////
 
 
@@ -169,7 +188,7 @@
  
  ----------------必选参数-------------------------------
  "KeyWord" : 必选参数
-            KeyWord团购名称关键字
+ KeyWord团购名称关键字
  
  
  ----------------可选参数-------------------------------
@@ -185,34 +204,34 @@
  */
 
 -(NSArray*)fetchGroupBuyingUsingKeyword:(NSString*)KeyWord
-                               withPageIndex:(NSInteger)pageIndex
-                                withCityName:(NSString*)cityString
-                                withDistName:(NSString*)DistString
-                                 withAreaKey:(NSString*)Areakey;
+                          withPageIndex:(NSInteger)pageIndex
+                           withCityName:(NSString*)cityString
+                           withDistName:(NSString*)DistString
+                            withAreaKey:(NSString*)Areakey;
 
 /*
  通过经纬度度信息获取 团购信息
  
  
---------------------- 必选参数--------------------------
+ --------------------- 必选参数--------------------------
  x	"latString"        		 //维度
  x	"lonString"        		 //经度
-
+ 
  -------------------- 可选参数 --------------------------
  "type"			//默认为3 . 坐标的类型:
-                      1.gcj02ll（国测局墨卡托坐标,火星坐标系）、
-                      2.wgs84ll（GPS经纬度，地球坐标系）、
-                      3.bd09ll（百度墨卡托坐标）
+ 1.gcj02ll（国测局墨卡托坐标,火星坐标系）、
+ 2.wgs84ll（GPS经纬度，地球坐标系）、
+ 3.bd09ll（百度墨卡托坐标）
  "radius"          //半径 ，单位为米. 如果超过10000或小于1时，默认为100 , 建议值为10000
  "pageIndex"          //当前的页数不填默认为第一页 即 page:0 ，最大页码为20
  
  */
 -
 (NSArray*)fetchGroupBuyingUsingGPSlatlon:(NSString*)latString
-                            withlonString:(NSString*)lonString
-                            withCoordType:(NSInteger)type
-                               withRadius:(NSInteger)radius
-                            withPageIndex:(NSInteger)pageIndex;
+withlonString:(NSString*)lonString
+withCoordType:(NSInteger)type
+withRadius:(NSInteger)radius
+withPageIndex:(NSInteger)pageIndex;
 
 
 

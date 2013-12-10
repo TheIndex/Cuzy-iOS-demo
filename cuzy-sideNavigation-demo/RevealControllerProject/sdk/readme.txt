@@ -1,8 +1,28 @@
 
 
 
-===============version 3.3 ===============
+===============version 3.3.2 ===============
 lipo -create libCuzyAdSDK.a libCuzyAdSDK_device.a -output libCuzyAdSDK_universal.a
+
+
+////version 3.3.2////////////////////////////////////////////
+
+1. 新增对 京东数据平台的支持，web服务可以暂时访问 www.cuzy2.com
+2. 数据切换，在发送数据请求之前，设置数据平台类型
+
+/* using to switch between different database_type
+ #define CUZY_TAOBAO_DATABASE 1
+ #define CUZY_JD_DATABASE 2
+ 
+ default will be CUZY_TAOBAO_DATABASE,
+ if the value is wrong , will be set to default
+ */
+-(void)setCuzyDataBase:(int) dataBase_type;
+-(int)getCuzyDataBase;
+
+
+
+
 
 
 /////version 3.3//////////////////////////////////////////////

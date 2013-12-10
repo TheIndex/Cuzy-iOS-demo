@@ -430,6 +430,17 @@
     [self goBackFrontView];
 }
 
+- (IBAction)switchJDdata:(id)sender {
+    if ([[CuzyAdSDK sharedAdSDK] getCuzyDataBase] == CUZY_JD_DATABASE) {
+        [[CuzyAdSDK sharedAdSDK] setCuzyDataBase:CUZY_TAOBAO_DATABASE];
+    }
+    else if([[CuzyAdSDK sharedAdSDK] getCuzyDataBase] == CUZY_TAOBAO_DATABASE )
+    {
+         [[CuzyAdSDK sharedAdSDK] setCuzyDataBase:CUZY_JD_DATABASE];
+    }
+   
+}
+
 - (IBAction)action901:(id)sender {
        
     groupBuyViewController* groupView =  [[groupBuyViewController alloc] initWithNibName:@"groupBuyViewController" bundle:nil] ;
