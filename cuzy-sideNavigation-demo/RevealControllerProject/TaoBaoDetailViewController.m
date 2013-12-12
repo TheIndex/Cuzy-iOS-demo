@@ -132,8 +132,19 @@
         [self HandleJD:absoluteString];
     }
     
-
+    [self RunJS];
 }
+
+-(void)RunJS
+{
+    
+    [self.webview stringByEvaluatingJavaScriptFromString:@" var J_wrapper = document.getElementById('smartAd');"
+     "document.body.removeChild(J_wrapper);"];
+    
+    
+}
+
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [self.loadingImage setHidden:YES];
