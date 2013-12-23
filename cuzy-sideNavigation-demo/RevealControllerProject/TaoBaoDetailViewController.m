@@ -91,6 +91,12 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [self.loadingImage setHidden:NO];
+    NSString* absoluteString = [webView.request.URL absoluteString];
+    
+   
+
+    
+    
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
@@ -127,10 +133,10 @@
         
     }
     
-    
     if ([absoluteString rangeOfString:@"http://item.jd.com/"].length >0) {
         [self HandleJD:absoluteString];
     }
+    
     
     [self RunJS];
 }
@@ -155,9 +161,8 @@
     //http://m.jd.com/product/667648.html
     //http://item.jd.com/667648.html
     
-    
+    [self.webview stopLoading];
     @try {
-        
         NSRange result = [absoluteString rangeOfString:@"http://item.jd.com/"];
         NSString* endString = [absoluteString substringFromIndex:result.location+result.length];
         
